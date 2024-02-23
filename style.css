@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: rgb(255, 236, 207);
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.nav-bar{
+    width: 97%;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    border-radius: 10px;
+    box-shadow:
+    inset 0 -3em 3em #0135a64d,
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgba(17, 17, 17, 0.6);    
+
+
+}
+.logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+.three-line{
+    display: none;
+}
+.nav-content ul{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.nav-bar ul li a {
+    display: block;
+    transition: all .4s ease;
+    color: white;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-radius: 8px;
+   
+}
+.nav-bar ul li a:hover{
+    color: black;
+    box-shadow: inset 0 -5px 0 rgba(34, 32, 32, 0.3),inset 0 -5px 0 rgba(255,255,255,.2),0 5px;
+    background-color: white;
+}
+
+.nav-bar ul li a.active{
+    color: black;
+    box-shadow: inset 0 -5px 0 rgba(34, 32, 32, 0.5),inset 0 -5px 0 rgba(255,255,255,.2),0 5px;
+    background-color: white;
+}
+/* 
+responsive */
+
+@media screen and (max-width: 1320px){
+    .nav-bar{
+        padding: 0 50px;
+    }
+}
+
+
+@media screen and (max-width: 1100px){
+    .nav-bar{
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 850px){
+
+    .three-line{
+        display: block;
+        cursor: pointer;
+    }
+    .three-line .line{
+        width: 25px;
+        height: 2px;
+        background-color: white;
+        margin: 6px 0;
+    }
+    
+    .nav-content{
+        height:0;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0px;    
+        right: 0;
+        width: 93%;
+        transition: 0.3s;
+        overflow: hidden;
+        border-radius:2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+    }
+    .nav-content.activate{
+        height: 300px;
+        border-radius: 10px;
+        box-shadow:
+        inset 0 -3em 3em #0135a64d,
+        0 0 0 2px white,
+        0.3em 0.3em 1em rgba(17, 17, 17, 0.6); 
+    }
+    .nav-content ul{
+        display: block;
+        margin: 50px auto 0 auto;
+        width: fit-content;
+        opacity: 0;
+    }
+    .nav-content ul  li{
+        margin-bottom: 15px;
+    }
+   
+    .nav-content.activate ul{
+        opacity: 1;
+    }
+}
